@@ -95,6 +95,22 @@ output.textContent = origFiveArray;
 output.textContent = origFiveArray.shift();
 output.textContent = origFiveArray;
 
+//map():is used to change each element and return a new array
+
+let mappedArray =myArray.map(item => String(item));
+console.log('Mapped array is:' + mappedArray);
+console.log(typeof(mappedArray));
+
+//filter:slect specific elements; keeps elements that match a condition
+let numbersOnly = myArray.filter(item => typeof item === "number");
+console.log(numbersOnly);
+
+
+//includes():check if a value exists;return true or false
+
+console.log(myArray.includes(25));
+console.log(myArray.includes(false));
+
 // We can also modify the array contents by deleting or substituting elements, or inserting one or more elements at a certain place with splice()
 
 /* That's it for the basics of working with arrays! With these tools at your disposal, a whole new world of possibilities with JavaScript are at your command */
