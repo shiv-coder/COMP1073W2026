@@ -18,15 +18,6 @@ else
 let result = "abc" * 5;
 console.log(result);
 
-
-
-
- 
-
-
-
-
-
 // STEP 1b: Any value that is not false, undefined, null, 0, NaN, or an empty string will evaluate to TRUE when tested using a conditional statement - try a few other values for var homeWorkDone and test
 
 /* STEP 2: The more complex if|elseif|else */
@@ -38,12 +29,42 @@ const weatherButton = document.querySelector('#weatherButton');
 const comments = document.querySelector('#commentary');
 
 /* STEP 2a: Add an event listener for the 'click' event on the 'Set Weather' button that invokes the setWeather() function below */
-
+weatherButton.addEventListener('click',setWeather);
 
 function setWeather() {
 	let choice = select.value;
 	let temperature = temp.value;
 	/* STEP 2b: Craft an IF/ELSEIF/ELSE that changes the src attribute of the icon element to the appropriate .svg file in the images folder */
+	if(choice === 'sunny'){
+		icon.setAttribute('src','images/sunny.svg');
+		//check the temperature
+		if(temperature >= 15){
+			//It is warm
+			page.style.backgroundColor = 'Orange';
+		}
+		else{
+			page.style.backgroundColor = 'lightblue';
+		}
+	}
+	else if(choice === 'rainy'){
+		icon.setAttribute('src','images/rainy.svg');
+		if(temperature > 30){
+			page.style.backgroundColor = 'SteelBlue';
+
+		}
+		else
+			page.style.backgroundColor = 'Azure';
+		
+	}
+	else if (choice === 'windy'){
+		icon.setAttribute('src','images/windy.svg');
+		if(temperature < 15){
+			page.style.backgroundColor = 'darkGray';
+
+		}
+		else
+			page.style.backgroundColor = 'Orange';
+	}
 
 	/* STEP 3: Add a nested IF/ELSE statement inside the 'sunny' condition above that tests for temperature, and if it is equal to or greater than 15, turn the page background orange, otherwise turn it lightblue */
 
