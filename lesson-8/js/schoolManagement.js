@@ -91,7 +91,7 @@ School.prototype.findStudent = function (name) {
             return {
                course: course.title,
                info : student.getInfo(),
-               pass: student.isPass
+               pass: student.isPass()
             };
         }
     }
