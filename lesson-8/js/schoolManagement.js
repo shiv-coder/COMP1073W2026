@@ -89,9 +89,9 @@ School.prototype.findStudent = function (name) {
         const student = course.students.find(s => s.name === name);
         if (student) {
             return {
-               
-
-
+               course: course.title,
+               info : student.getInfo(),
+               pass: student.isPass
             };
         }
     }
