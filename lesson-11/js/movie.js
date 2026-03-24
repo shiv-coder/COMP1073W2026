@@ -2,7 +2,7 @@
 const baseURL = 'https://www.omdbapi.com/';
 
 // STEP 1: Get your API key from http://www.omdbapi.com/apikey.aspx
-const key = '';
+const key = '739144e3';
 
 // DOM elements
 const searchTerm = document.querySelector('.search');
@@ -11,18 +11,32 @@ const searchForm = document.querySelector('form');
 const section = document.querySelector('section');
 
 // STEP 2: Add submit event listener
-
+searchForm.addEventListener('submit',fetchResults);
 
 // Function to fetch results
 function fetchResults(event) {
     // STEP 3: Prevent default form submission
-
+    event.preventDefault();
 
     // STEP 4: Build the request URL
+    let url = baseURL + '?apikey=' + key;
     
+    if(searchTerm.value){
+        url += '&s=' + searchTerm.value;
+    }
+
+    if(yearInput.value){
+        url += '&y=' + yearInput.value;
+    }
+
+    console.log("Request URL: ",url);
+
 
     // STEP 5: Use fetch() to get data and pass to displayResults()
-    
+    fetch(url)
+        .then(response =>response.json())
+        .then(json =>displayResults(json))
+        .catch(error=>console.error('Error:',error));
 
 }
 
