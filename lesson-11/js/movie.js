@@ -44,6 +44,7 @@ function fetchResults(event) {
 function displayResults(json) {
 
     // STEP 6: Log JSON data
+    console.log(json);
     
 
     // Clear previous results
@@ -53,6 +54,7 @@ function displayResults(json) {
 
     // STEP 7: Store movies array
     
+    const movies = json.Search;
 
     if (!movies || movies.length === 0) {
         const para = document.createElement('p');
@@ -69,9 +71,19 @@ function displayResults(json) {
             const current = movies[i];
 
             // STEP 8: Extract title, year, poster
+            heading.textContent = current.Title;
+            para.textContent = "Year: " + current.Year;
+            if(current.Poster != "N/A"){
+                img.src = current.Poster;
+                img.alt = current.Title;
+            }
             
 
             // STEP 9: Build DOM structure
+            article.appendChild(heading);
+            article.appendChild(img);
+            article.appendChild(para);
+            section.appendChild(article);
             
 
         }
