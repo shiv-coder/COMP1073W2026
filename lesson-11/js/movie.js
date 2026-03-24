@@ -14,7 +14,7 @@ const section = document.querySelector('section');
 searchForm.addEventListener('submit',fetchResults);
 
 // Function to fetch results
-function fetchResults(event) {
+async function fetchResults(event) {
     // STEP 3: Prevent default form submission
     event.preventDefault();
 
@@ -33,10 +33,18 @@ function fetchResults(event) {
 
 
     // STEP 5: Use fetch() to get data and pass to displayResults()
-    fetch(url)
-        .then(response =>response.json())
-        .then(json =>displayResults(json))
-        .catch(error=>console.error('Error:',error));
+   try{ 
+    //Wait for response
+    const response = await fetch(url);
+    //Convert to JSON
+    const json = await response.json();
+    //Pass data to display functions
+    displayResults(json);
+   }
+   catch(error){
+    console.error('Error: ',error);
+   }
+      
 
 }
 
