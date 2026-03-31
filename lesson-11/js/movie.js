@@ -1,8 +1,13 @@
 // Base URL for OMDb API
 const baseURL = 'https://www.omdbapi.com/';
-
+//
 // STEP 1: Get your API key from http://www.omdbapi.com/apikey.aspx
 const key = '739144e3';
+//API_KEY=123456787
+
+//require('dotenv').config()
+//const key1 = process.env.API_KEY;
+
 
 // DOM elements
 const searchTerm = document.querySelector('.search');
