@@ -1,13 +1,13 @@
 /* Variables
 -------------------------------------------------- */
 // STEP 1a: Grab the first <dd> element for displaying the battery charging status
-const chargeStatus = document.querySelector('#battery dd:nth of type(1)');
+const chargeStatus = document.querySelector('#battery dd:nth-of-type(1)');
 
 // STEP 1b: Grab the <output> element inside the second <dd> element for displaying the battery charge level
-const chargeLevel = document.querySelector('#battery dd:nth of type(2) output');
+const chargeLevel = document.querySelector('#battery dd:nth-of-type(2) output');
 
 // STEP 1c: Grab the <progress> element inside the second <dd> element for a more graphical representation of the battery's state of charge (SOC)
-const chargeMeter = document.querySelector('#battery dd:nth of type(2) progress');
+const chargeMeter = document.querySelector('#battery dd:nth-of-type(2) progress');
 
 /* Functions
 -------------------------------------------------- */
